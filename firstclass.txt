@@ -1,0 +1,14 @@
+TIPAGEM:
+
+C - estática
+os tipos devem ser determinados no tempo de compilação.
+int i = 0;
+char c = 'a';
+
+Python - dinâmica
+o tipo é determinado pela variável
+i = 0
+c = 'a'
+i = "Hello World" - permitido!
+
+Python forte, javascript fraca
