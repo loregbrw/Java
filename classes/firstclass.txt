@@ -19,3 +19,8 @@ JIT - Just In TIPAGEM:
 
 JAVA - código intermédiário - 01001011
 converte o códito intermédiário para assembly em tempo de execução, vai ser compilado apenas quando executado.
+
+=========================================
+
+Stack & Heap:
+
