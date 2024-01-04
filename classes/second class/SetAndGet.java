@@ -30,7 +30,9 @@ public class Person {
 
 // =====================
 
-class Main {
+import java.util.*;
+
+class SetAndGet {
   public static void main(String[] args) {
     Person person = new Person();
 

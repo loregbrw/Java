@@ -1,7 +1,7 @@
 // import java.util.Scanner; // leitura de dados
 import java.util.*; // importa tudo da util
 
-class firsclass1 {
+class ScanAndSet {
   public static void main(String[] args) {
 
     Scanner sc = new Scanner(System.in);

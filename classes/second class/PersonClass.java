@@ -1,4 +1,6 @@
-class Main {
+import java.util.*;
+
+class PersonClass {
   public static void main(String[] args) {
     // Person[] people = new Person[3];
     // for (int i = 0; i < people.length; i++) {

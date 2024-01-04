@@ -1,6 +1,6 @@
 import java.util.*; // importa tudo da util
 
-class firstclass2 {
+class ArrayAndRandom {
   public static void main(String[] args) {
 
     byte[] bytes = new byte[256];
