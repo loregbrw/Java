@@ -14,12 +14,14 @@ public class Stack<E> {
     }
 
     public E peek() {
+        if (this.empty())
+            return null;
         return (E)this.list[count - 1];
     }
 
     public E pop() {
         if (this.empty())
-            throw new EmptyStackException();
+            return null;
 
         E returnedItem = (E)this.list[count - 1];
         this.list[count - 1] = null;
