@@ -1,12 +1,13 @@
-public class IntegerArrayList {
+class IntegerArrayList {
   private Integer[] list;
   private int size;
   private int elements;
 
-  public void printAll() {
+  void printAll() {
     for (int i = 0; i < this.size; i++) {
-      System.out.println(this.list[i]);
+      System.out.print(this.list[i] + " ");
     }
+    System.out.println();
   }
 
   private void updateElements() {
@@ -18,7 +19,7 @@ public class IntegerArrayList {
     }
   }
 
-  public IntegerArrayList(Integer[] list) {
+  IntegerArrayList(Integer[] list) {
     this.list = list;
     this.size = list.length;
     this.elements = 0;
@@ -26,30 +27,30 @@ public class IntegerArrayList {
     this.updateElements();
   }
 
-  public IntegerArrayList(int size) {
+  IntegerArrayList(int size) {
     this.size = size;
     this.elements = 0;
     this.list = new Integer[size];
   }
 
-  public IntegerArrayList() {
+  IntegerArrayList() {
     this.size = 10;
     this.elements = 0;
     this.list = new Integer[10];
   }
 
-  public Integer get(int index) {
+  Integer get(int index) {
     return this.list[index];
   }
 
-  public void set(int index, Integer value) {
+  void set(int index, Integer value) {
     if (index <= this.elements) {
       this.list[index] = value;
       this.updateElements();
     }
   }
 
-  public void add(Integer value) {
+  void add(Integer value) {
     if (this.elements == this.size) {
       Integer[] newArray = new Integer[this.size * 2];
       for (int i = 0; i < this.size; i++) {
@@ -63,7 +64,7 @@ public class IntegerArrayList {
     this.updateElements();
   }
 
-  public boolean contains(Integer value) {
+  boolean contains(Integer value) {
     for (int i = 0; i < this.elements; i++) {
       if (this.list[i].equals(value)) {
         return true;
@@ -72,17 +73,17 @@ public class IntegerArrayList {
     return false;
   }
 
-  public int getSize() {
+  int getSize() {
     return this.size;
   }
 
-  public void clear() {
+  void clear() {
     this.size = 10;
     this.elements = 0;
     this.list = new Integer[10];
   }
 
-  public int indexOf(Integer value) {
+  int indexOf(Integer value) {
     for (int i = 0; i < this.elements; i++) {
       if (this.list[i].equals(value)) {
         return i;
@@ -91,11 +92,48 @@ public class IntegerArrayList {
     return -1;
   }
 
-  public boolean isEmpty() {
+  boolean isEmpty() {
     return this.elements == 0;
   }
 
   public IntegerArrayList clone() {
     return new IntegerArrayList(this.list);
+  }
+
+  Integer remove(int index) {
+    Integer value = this.list[index];
+    this.list[index] = null;
+
+    for (int i = index; i < this.elements; i++) {
+      this.list[i] = this.list[i + 1];
+    }
+    return value;
+  }
+
+  boolean remove(Integer value) {
+    for (int i = 0; i < this.elements; i++) {
+      if (this.list[i].equals(value)) {
+        this.remove(i);
+        return true;
+      }
+    }
+    return false;
+  }
+
+  void sort() {
+    Integer[] sortedArray = new Integer[this.size];
+
+    for(int i = 0; i < this.elements; i++) {
+      int highestIndex = 0;
+      
+      for (int j = 1; j < this.elements - i; j++) {
+        if(this.list[j] != null && this.list[highestIndex].compareTo(this.list[j]) > 0) {
+          highestIndex = j;
+        }
+      }
+      sortedArray[i] = this.list[highestIndex];
+      this.remove(highestIndex);
+    }
+    this.list = sortedArray;
   }
 }
