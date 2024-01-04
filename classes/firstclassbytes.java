@@ -1,6 +1,6 @@
 import java.util.*; // importa tudo da util
 
-class Main {
+class firstclassbytes {
   public static void main(String[] args) {
 
     short[] testBytes = {173, 0b01010110, 0b01010110, 55, 200, 255};
