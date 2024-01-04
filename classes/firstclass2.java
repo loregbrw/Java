@@ -1,6 +1,6 @@
 import java.util.*; // importa tudo da util
 
-class Main {
+class firstclass2 {
   public static void main(String[] args) {
 
     byte[] bytes = new byte[256];
