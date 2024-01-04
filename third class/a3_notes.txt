@@ -1,0 +1,6 @@
+IntegerArrayList:
+
+get(int) : Integer
+set(int, Integer) : void // altera um item da lista
+add(Integer) : void // adiciona um elemento no final da lista
+contains(Integer) : bool
