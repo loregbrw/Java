@@ -1,0 +1,5 @@
+4 pilares classes:
+
+abstração
+encapsulamento
+polimorfismo
